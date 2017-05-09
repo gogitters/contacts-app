@@ -1,0 +1,6 @@
+<h1>All Your Contacts</h1>
+<% @contacts.each do |contact| %>
+  <p><%= contact.first_name %> <%= contact.last_name %></p>
+  <p>Phone number: <%= contact.phone_number %></p>
+  <p>Email: <%= contact.email %></p>
+<% end %>
