@@ -1,0 +1,14 @@
+<h1>Contacts</h1>
+<% @contacts.each_slice(3) do |contact_array| %>
+  <div class="row">
+    <% contact_array.each do |contact| %>
+      <div class="col-md-4">
+        <div class="well">
+          <a href="/contacts/<%= contact.id %>"><h3><%= contact.first_name %> <%= contact.last_name %></h3></a>
+          <p><%= contact.phone_number %></p>
+          <p><%= contact.email %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

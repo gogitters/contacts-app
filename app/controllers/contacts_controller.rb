@@ -1,11 +1,42 @@
 class ContactsController < ApplicationController
-  def first_contact_method
-    @contact = Contact.first
-    render "first_contact_view.html.erb"
+  def index
+    @contacts = Contact.all
+    render "index.html.erb"
   end
 
-  def all_contacts_method
-    @contacts = Contact.all
-    render "all_contacts.html.erb"
+  def show
+    @contact = Contact.find_by(id: params[:id])
+    render "show.html.erb"
+  end
+
+  def new
+    render "new.html.erb"
+  end
+
+  def create
+    contact = Contact.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    contact.save
+    flash[:success] = "Contact Created"
+    redirect_to "/contacts/#{contact.id}"
+  end
+
+  def edit
+    @contact = Contact.find_by(id: params[:id])
+    render "edit.html.erb"
+  end
+
+  def update
+    contact = Contact.find_by(id: params[:id])
+    contact.update(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    contact.save
+    flash[:success] = "Contact Updated"
+    redirect_to "/contacts/#{contact.id}"
+  end
+
+  def destroy
+    contact = Contact.find_by(id: params[:id])
+    contact.destroy
+    flash[:success] = "Contact deleted"
+    redirect_to root_path
   end
 end

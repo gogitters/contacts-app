@@ -1,3 +1,9 @@
-// Place all the styles related to the contacts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$bluehippo: #1587BD;
+
+h1 {
+  color: $bluehippo;
+}
+
+p {
+  font-size: 1.2em;
+}
