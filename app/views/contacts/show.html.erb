@@ -1,7 +1,8 @@
 <h1>Your Contact: </h1>
-<p><%= @contact.first_name %> <%= @contact.last_name %></p>
-<p>Phone number: <%= @contact.phone_number %></p>
+<p><%= @contact.full_name %></p>
+<p>Phone number: <%= @contact.japan_phone %></p>
 <p>Email: <%= @contact.email %></p>
+<p>Updated at: <%= @contact.friendly_updated_at %></p>
 
 <%= button_to "Edit Contact", "/contacts/#{@contact.id}/edit", method: :get %>
 <%= button_to "Delete Contact", "/contacts/#{@contact.id}", method: :delete %>
