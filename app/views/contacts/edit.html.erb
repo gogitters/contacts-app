@@ -3,6 +3,9 @@
     First Name: <input type="text" value=<%= @contact.first_name %> name="first_name">
   </div>
   <div>
+    Middle Name: <input type="text" value=<%= @contact.middle_name %> name="middle_name">
+  </div>
+  <div>
     Last Name: <input type="text" value=<%= @contact.last_name %> name="last_name">
   </div>
   <div>
@@ -10,6 +13,9 @@
   </div>
   <div>
     Phone Number: <input type="text" value=<%= @contact.phone_number %> name="phone_number">
-</div>
+  </div>
+  <div>
+    Bio: <textarea name="bio" cols="30" rows="10"><%= @contact.bio %></textarea>
+  </div>
   <input type="submit" value="Update Contact">
 <% end %>

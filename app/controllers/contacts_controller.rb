@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    contact = Contact.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    contact = Contact.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number], middle_name: params[:middle_name], bio: params[:bio])
     contact.save
     flash[:success] = "Contact Created"
     redirect_to "/contacts/#{contact.id}"
@@ -27,7 +27,7 @@ class ContactsController < ApplicationController
 
   def update
     contact = Contact.find_by(id: params[:id])
-    contact.update(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
+    contact.update(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number],middle_name: params[:middle_name], bio: params[:bio])
     contact.save
     flash[:success] = "Contact Updated"
     redirect_to "/contacts/#{contact.id}"

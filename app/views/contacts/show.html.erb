@@ -2,6 +2,7 @@
 <p><%= @contact.full_name %></p>
 <p>Phone number: <%= @contact.japan_phone %></p>
 <p>Email: <%= @contact.email %></p>
+<p>Bio: <%= @contact.bio %></p>
 <p>Updated at: <%= @contact.friendly_updated_at %></p>
 
 <%= button_to "Edit Contact", "/contacts/#{@contact.id}/edit", method: :get %>
