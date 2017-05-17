@@ -9,8 +9,8 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
 # Use Puma as the app server
+gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'seed_dump'
 
 gem 'faker'
 gem 'bootstrap-sass', '~> 3.3.6'
