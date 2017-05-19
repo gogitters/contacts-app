@@ -47,4 +47,10 @@ class ContactsController < ApplicationController
     @contacts = Contact.all_johns
     render "index.html.erb"
   end
+
+  def search
+    # Recipe.where("chef LIKE ? OR prep_time = ?", "%Ray%", 10)
+    @contacts = Contact.where("first_name ILIKE ? OR last_name ILIKE ? OR email ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    render "index.html.erb"
+  end
 end

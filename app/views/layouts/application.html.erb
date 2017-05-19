@@ -16,6 +16,10 @@
       </div>
     <% end %>
     <div class="container">
+      <%= form_tag "/search", method: :post do %>
+        Search: <input type="text" name="search">
+        <input type="submit" value="Search">
+      <% end %>
       <%= yield %>
     </div>
   </body>
