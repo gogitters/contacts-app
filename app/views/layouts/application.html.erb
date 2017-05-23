@@ -15,6 +15,13 @@
         <%= message.html_safe %>  
       </div>
     <% end %>
+    <% if current_user %>
+      <p>Hello <%= current_user.name %></p>
+      <a href="/logout">Log out</a>
+    <% else %>
+      <a href="/login">Log in</a>
+      <a href="/signup">Sign up</a>
+    <% end %>
     <div class="container">
       <%= form_tag "/search", method: :post do %>
         Search: <input type="text" name="search">
